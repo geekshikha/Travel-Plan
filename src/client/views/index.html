@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    />
+    <title>Capstone - Travel App</title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="section-one">
+        <div class="main-content">
+          <div class="heading">
+            <h1>The awesome trip you've always wanted!</h1>
+          </div>
+
+          <div class="the-form">
+            <form onsubmit="return Travel.getTravelData(event)">
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Location"
+              />
+              <br />
+              <br />
+              <input type="text" id="to" name="to"  placeholder="Enter Date: MM/DD/YYY"
+              onfocus="(this.type='date')" />
+              <br />
+              <br />
+              <br />
+              <input type="submit" id="go" name="" value="Submit" />
+            </form>
+          </div>
+        </div>
+      
+      </section>
+      <section class="section-two">
+        <div class="trips">
+          <h1>My Trips</h1>
+
+          <div class="results">
+            <div id="result-wrapper">
+              <div id="main-image"></div>
+              <div class="bottom">
+                <div class="location-name"></div>
+                <div class="content">
+                  <div class="weather"></div>
+                  <div class="divider">
+                    <div class="line"></div>
+                  </div>
+                  <div class="dates">
+                    <div class="departure"></div>
+                    <div class="timer"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="print-div"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© Copyright 2021 Trip Planner</p>
+    </footer>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
